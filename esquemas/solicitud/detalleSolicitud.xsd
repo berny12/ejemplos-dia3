@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xs:schema
+	targetNamespace="http://www.synergyj.com/cursos/webservices/solicitud/detalle"
+	xmlns="http://www.synergyj.com/cursos/webservices/solicitud/detalle"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- JAXBDocumentoIdentificacion -->
+	<xs:complexType name="JAXBDocumentoIdentificacion">
+		<xs:sequence>
+			<xs:element name="anioRegistro" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="institucion" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="35" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fechaExpedicion" type="xs:date"
+				minOccurs="0" />
+			<xs:element name="folio" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="35" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="foja" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="idEntidad" type="xs:int" minOccurs="0" />
+			<xs:element name="claveMunicipio" type="xs:int" minOccurs="0" />
+			<xs:element name="idPaisRegistroActa" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="idTipoActaNacimiento" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="idTipoDocumentoIdentificacion" type="xs:int" />
+			<xs:element name="libro" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tomo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--JAXBImagenesSolicitud -->
+	<xs:complexType name="JAXBImagenesSolicitud">
+		<xs:sequence>
+			<xs:element name="idCausaSinFirma" type="xs:long"
+				minOccurs="0" />
+			<xs:element name="idCausaSinHuella" type="xs:long"
+				minOccurs="0" />
+			<xs:element name="idPrimerDedo" type="xs:long" minOccurs="0" />
+			<xs:element name="idSegundoDedo" type="xs:long" minOccurs="0" />
+			<xs:element name="imagenFirma" type="xs:base64Binary"
+				minOccurs="0" />
+			<xs:element name="imagenFotografia" type="xs:base64Binary" />
+			<xs:element name="primerWSQ" type="xs:base64Binary"
+				minOccurs="0" />
+			<xs:element name="segundoWSQ" type="xs:base64Binary"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- JAXBSolicitante -->
+	<xs:complexType name="JAXBSolicitante">
+		<xs:sequence>
+			<xs:element name="apellidoMaterno">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="32" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="apellidoPaterno">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="32" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="correoElectronico" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="curp" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="18" />
+						<xs:maxLength value="18" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="direccion" type="JAXBDireccion" />
+			<xs:element name="edad" type="xs:int" />
+			<xs:element name="escolaridad" type="xs:long" />
+			<xs:element name="fechaNacimiento" type="xs:date" />
+			<xs:element name="fechaNaturalizacion" type="xs:date"
+				minOccurs="0" />
+			<xs:element name="idLugarNacimiento" type="xs:long" />
+			<xs:element name="nombre">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="32" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ocupacion" type="xs:long" />
+			<xs:element name="paisNacimiento" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="35" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="sexo">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="H" />
+						<xs:enumeration value="M" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="telefono" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="35" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- JAXBDireccion -->
+	<xs:complexType name="JAXBDireccion">
+		<xs:sequence>
+			<xs:element name="aniosResidencia" type="xs:int" />
+			<xs:element name="calle">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="40" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="codigoPostal" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minExclusive value="0" />
+						<xs:maxExclusive value="100000" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="colonia">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="40" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mesesResidencia" type="xs:int" />
+			<xs:element name="noExterior">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="8" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="noInterior" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="8" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="referenciaDireccion" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+						<xs:maxLength value="250" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="JAXBDireccionCiudadano">
+		<xs:annotation>
+			<xs:documentation>Elemento de direccion</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="direccion" type="JAXBDireccion" />
+				<xs:element name="nombre" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

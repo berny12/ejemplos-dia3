@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.synergyj.com/cursos/webservices/solicitud"
+	xmlns:detalle="http://www.synergyj.com/cursos/webservices/solicitud/detalle"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xs:import
+		namespace="http://www.synergyj.com/cursos/webservices/solicitud/detalle"
+		schemaLocation="./detalleSolicitud.xsd" />
+
+	<xs:element name="JAXBSolicitud">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="documentoIdentificacion" type="detalle:JAXBDocumentoIdentificacion" />
+				<xs:element name="fechaSolicitud">
+					<xs:simpleType>
+						<xs:restriction base="xs:dateTime" />
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="folioSolicitud">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="13" />
+							<xs:maxLength value="13" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="idTipoSolicitud" type="xs:long" />
+				<xs:element name="imagenesSolicitud" type="detalle:JAXBImagenesSolicitud" />
+				<xs:element name="observaciones" type="xs:string"
+					minOccurs="0" />
+				<xs:element name="solicitante" type="detalle:JAXBSolicitante" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

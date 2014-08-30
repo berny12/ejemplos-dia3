@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="curso">
+    <xs:sequence>
+      <xs:element name="estudiantes" type="estudiante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="fechaFin" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="fechaInicio" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="estudiante">
+    <xs:sequence>
+      <xs:element name="apellidoPaterno" type="xs:string" minOccurs="0"/>
+      <xs:element name="edad" type="xs:int"/>
+      <xs:element name="estudianteID" type="xs:int"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

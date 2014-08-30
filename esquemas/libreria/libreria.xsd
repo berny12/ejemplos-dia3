@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.synergyj.com/webservices/libreria" xmlns:tns="http://www.synergyj.com/webservices/libreria" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="libro" type="tns:libro"/>
+
+  <xs:complexType name="libro">
+    <xs:sequence>
+      <xs:element name="editorial" type="xs:string" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipoLibro" type="tns:jaxbTipoLibro" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="jaxbTipoLibro">
+    <xs:sequence>
+      <xs:element name="tipoLibroID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

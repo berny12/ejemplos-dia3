@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="http://www.synergyj.com/cursos/webservices/citas"
+	 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.synergyj.com/cursos/webservices/citas"
+	 xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+	elementFormDefault="unqualified"
+	    jxb:version="2.0">
+
+<xs:element name="JAXBCitasPendientes">
+	<!-- JAXBCitasPendientes -->
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="fecha" type="xs:date" />
+			<xs:element name="totalCitas" type="xs:int" />
+			<xs:element name="citas" maxOccurs="unbounded" type="JAXBCita" />
+		</xs:sequence>
+	</xs:complexType>
+ </xs:element>
+
+	<!-- JAXBCita -->
+	<xs:complexType name="JAXBCita">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="apellidoPaterno" type="xs:string" />
+			<xs:element name="apellidoMaterno" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="sexo">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1" />
+						<xs:enumeration value="M" />
+						<xs:enumeration value="H" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="horaCita" type="xs:time" />
+			<xs:element name="estatus" type="JAXBEstatusCita" />
+			<xs:element name="observaciones" minOccurs="0" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- JAXBEstatusCita -->
+	<xs:simpleType name="JAXBEstatusCita">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ORDINARIA" />
+			<xs:enumeration value="URGENTE" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
+
+
+
+
+

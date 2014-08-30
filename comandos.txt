@@ -1,0 +1,43 @@
+xjc -d src/test/java -p com.synergyj.cursos.webservices.jaxb.solicitud esquemas/solicitud/solicitud.xsd
+
+Ejercicio 2
+
+schemagen -cp  target/classes/ -d esquemas/cursos src/main/java/com/synergyj/cursos/webservices/entidades/cursos/Curso.java
+
+Ejercicio 3
+
+schemagen -cp target/classes/ -d esquemas/viajes src/main/java/com/synergyj/cursos/webservices/entidades/viajes/Viaje.java
+
+
+@XmlSchema(namespace = JAXBUtils.VIAJES_NAMESPACE, elementFormDefault = XmlNsForm.UNQUALIFIED)
+package com.synergyj.cursos.webservices.entidades.viajes;
+import javax.xml.bind.annotation.XmlNsForm;
+import javax.xml.bind.annotation.XmlSchema;
+
+
+@XmlSchema(xmlns = { @XmlNs(prefix = "otro", namespaceURI = "http://www.synergyj.com/cursos/webservices/otros") }, namespace = JAXBUtils.VIAJES_NAMESPACE, elementFormDefault = XmlNsForm.QUALIFIED)
+package com.synergyj.cursos.webservices.entidades.viajes;
+import javax.xml.bind.annotation.XmlNs;
+import javax.xml.bind.annotation.XmlNsForm;
+import javax.xml.bind.annotation.XmlSchema;
+
+
+@XmlSchema(xmlns = { @XmlNs(prefix = "otro", namespaceURI = "http://www.synergyj.com/cursos/webservices/otros") }, namespace = JAXBUtils.VIAJES_NAMESPACE, elementFormDefault = XmlNsForm.QUALIFIED)
+@XmlAccessorType(XmlAccessType.FIELD) 
+package com.synergyj.cursos.webservices.entidades.viajes;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlNs;
+import javax.xml.bind.annotation.XmlNsForm;
+import javax.xml.bind.annotation.XmlSchema;
+
+
+xjc -d src/test/java -p com.synergyj.cursos.webservices.jaxb.solicitud esquemas/solicitud/solicitud.xsd
+
+
+
+xjc -d src/test/java -p com.synergyj.cursos.webservices.jaxb.citas esquemas/citas/citas.xsd
+
+
+
+
